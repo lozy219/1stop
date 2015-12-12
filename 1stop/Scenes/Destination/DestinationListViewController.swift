@@ -36,6 +36,9 @@ class DestinationListViewController: UIViewController, UITableViewDelegate, UITa
         cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         self.previousCheckedStation = indexPath
         Store.sharedInstance.chooseStop(cell.numberLabel.text!)
+        
+        var tababarController = self.parentViewController as? UITabBarController
+        tababarController!.selectedIndex = 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
