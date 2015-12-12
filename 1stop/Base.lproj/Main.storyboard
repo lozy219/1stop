@@ -23,7 +23,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <segue destination="QXp-0S-M5h" kind="show" action="showDetailViewController:sender:" id="oaZ-iS-cY4"/>
+                                    <segue destination="QXp-0S-M5h" kind="show" identifier="selectDestination" action="showDetailViewController:sender:" id="oaZ-iS-cY4"/>
                                 </connections>
                             </textField>
                         </subviews>
@@ -46,7 +46,7 @@
         <!--Map-->
         <scene sceneID="kU9-IZ-DkM">
             <objects>
-                <viewController id="mnF-0U-6v8" userLabel="Map" customClass="DestinationMapViewController" sceneMemberID="viewController">
+                <viewController id="mnF-0U-6v8" userLabel="Map" customClass="DestinationMapViewController" customModule="_stop" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LoL-K7-tKW"/>
                         <viewControllerLayoutGuide type="bottom" id="YcX-kl-uU2"/>
@@ -76,28 +76,12 @@
         <!--List-->
         <scene sceneID="0Yj-nJ-Eel">
             <objects>
-                <viewController id="ewA-vK-NaD" userLabel="List" customClass="DestinationListViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="fze-1Y-9qq"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gdf-b1-wdF"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CeM-PY-GrT">
+                <viewController id="ewA-vK-NaD" userLabel="List" customClass="DestinationListViewController" customModule="_stop" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x9C-nu-sJp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-5E-1Ng">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="qSM-5E-1Ng" secondAttribute="trailing" id="DfH-za-9J3"/>
-                            <constraint firstItem="qSM-5E-1Ng" firstAttribute="leading" secondItem="CeM-PY-GrT" secondAttribute="leading" id="aqn-Bp-4JH"/>
-                            <constraint firstItem="Gdf-b1-wdF" firstAttribute="top" secondItem="qSM-5E-1Ng" secondAttribute="bottom" id="rxs-qm-Aly"/>
-                            <constraint firstItem="qSM-5E-1Ng" firstAttribute="top" secondItem="fze-1Y-9qq" secondAttribute="bottom" id="sNZ-ac-Ubn"/>
-                        </constraints>
-                    </view>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Ln6-RX-hwc" userLabel="List"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKK-WA-45p" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +91,7 @@
         <!--Destination View Controller-->
         <scene sceneID="kuO-Du-8vw">
             <objects>
-                <tabBarController id="QXp-0S-M5h" customClass="DestinationViewController" sceneMemberID="viewController">
+                <tabBarController id="QXp-0S-M5h" customClass="DestinationViewController" customModule="_stop" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mXB-Mz-Gig">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
