@@ -6,8 +6,17 @@
 //  Copyright © 2015 golearn. All rights reserved.
 //
 
-import Cocoa
+import Foundation
+import MapKit
 
 class RoutePoint: NSObject {
-
+    let coordinate: CLLocationCoordinate2D
+    let title: String
+    let identifier: String
+    
+    init(c: CLLocationCoordinate2D, title: String, identifier: String) {
+        self.coordinate = c
+        self.title = title
+        self.identifier = identifier
+    }
 }
