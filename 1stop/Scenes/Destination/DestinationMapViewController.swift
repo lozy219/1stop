@@ -15,6 +15,7 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
     private let locationManager: CLLocationManager = CLLocationManager()
     private var routePolyline: MKPolyline?
     private var routePoints: [RoutePoint] = []
+    private var stopPoints: [RoutePoint] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,14 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
         for stop in stops {
             points.append(RoutePoint(c: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), title: stop.name, identifier: stop.number))
         }
-        self.setRoutePoints(points)
+        stopPoints = points
+        
+        let route = Store.sharedInstance.currentBus!.route
+        var routePoints:[RoutePoint] = []
+        for stop in route {
+            routePoints.append(RoutePoint(c: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), title: "", identifier: ""))
+        }
+        setRoutePoints(routePoints)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -99,7 +107,7 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         // Show new annotation pins
         var zoomRect = MKMapRectNull
-        for pin in routePoints {
+        for pin in stopPoints {
             mapView.addAnnotation(pin)
             
             let annotationPoint = MKMapPointForCoordinate(pin.coordinate)

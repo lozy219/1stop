@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class Bus: NSObject {
     var number: String
@@ -15,13 +16,15 @@ class Bus: NSObject {
     var provider: String?
     var type: String
     var stops: [Stop]
+    var route: [CLLocationCoordinate2D]
     
-    init(number: String, name: String, direction: String, provider: String?, type: String, stops: [Stop]) {
+    init(number: String, name: String, direction: String, provider: String?, type: String, stops: [Stop], route: [CLLocationCoordinate2D]) {
         self.number = number
         self.name = name
         self.direction = direction
         self.provider = provider
         self.type = type
         self.stops = stops
+        self.route = route
     }
 }
