@@ -10,12 +10,14 @@ import UIKit
 
 class Bus: NSObject {
     var number: String
+    var name: String
     var direction: String
-    var provider: String
+    var provider: String?
     var type: String
     
-    init(number: String, direction: String, provider: String, type: String) {
+    init(number: String, name: String, direction: String, provider: String?, type: String) {
         self.number = number
+        self.name = name
         self.direction = direction
         self.provider = provider
         self.type = type
