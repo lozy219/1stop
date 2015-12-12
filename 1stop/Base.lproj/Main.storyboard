@@ -6,10 +6,10 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Search-->
+        <!--1 STOP-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SearchViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SearchViewController" customModule="_stop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,38 +18,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-9X-Ttm">
-                                <rect key="frame" x="150" y="164" width="300" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udH-vT-NkY">
-                                <rect key="frame" x="276" y="234" width="48" height="30"/>
-                                <state key="normal" title="Search"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-9X-Ttm">
+                                <rect key="frame" x="150" y="164" width="300" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <segue destination="QXp-0S-M5h" kind="show" id="qXd-Wt-0PI"/>
+                                    <segue destination="QXp-0S-M5h" kind="show" action="showDetailViewController:sender:" id="oaZ-iS-cY4"/>
                                 </connections>
-                            </button>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lGJ-9X-Ttm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="Fdg-I9-FhJ"/>
-                            <constraint firstItem="udH-vT-NkY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GBp-Ea-YDm"/>
-                            <constraint firstItem="udH-vT-NkY" firstAttribute="top" secondItem="lGJ-9X-Ttm" secondAttribute="bottom" constant="40" id="HAJ-0t-Qup"/>
                             <constraint firstItem="lGJ-9X-Ttm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mdt-Sa-66R"/>
                             <constraint firstItem="lGJ-9X-Ttm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="hMV-xv-ucz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Search" id="0Z4-8P-NqT"/>
+                    <navigationItem key="navigationItem" title="1 STOP" id="0Z4-8P-NqT"/>
+                    <connections>
+                        <outlet property="textField" destination="lGJ-9X-Ttm" id="Xrn-us-Fng"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="117" y="242"/>
         </scene>
-        <!--Item 2-->
+        <!--Map-->
         <scene sceneID="kU9-IZ-DkM">
             <objects>
-                <viewController id="mnF-0U-6v8" customClass="DestinationMapViewController" sceneMemberID="viewController">
+                <viewController id="mnF-0U-6v8" userLabel="Map" customClass="DestinationMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LoL-K7-tKW"/>
                         <viewControllerLayoutGuide type="bottom" id="YcX-kl-uU2"/>
@@ -70,16 +67,16 @@
                             <constraint firstItem="YcX-kl-uU2" firstAttribute="top" secondItem="CA2-8j-i0b" secondAttribute="bottom" id="zDK-fo-oP5"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="FaL-wE-kj9"/>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="FaL-wE-kj9" userLabel="Map"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGr-uI-bYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="940" y="1350"/>
         </scene>
-        <!--Item 1-->
+        <!--List-->
         <scene sceneID="0Yj-nJ-Eel">
             <objects>
-                <viewController id="ewA-vK-NaD" customClass="DestinationListViewController" sceneMemberID="viewController">
+                <viewController id="ewA-vK-NaD" userLabel="List" customClass="DestinationListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fze-1Y-9qq"/>
                         <viewControllerLayoutGuide type="bottom" id="Gdf-b1-wdF"/>
@@ -101,7 +98,7 @@
                             <constraint firstItem="qSM-5E-1Ng" firstAttribute="top" secondItem="fze-1Y-9qq" secondAttribute="bottom" id="sNZ-ac-Ubn"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Ln6-RX-hwc"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="Ln6-RX-hwc" userLabel="List"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKK-WA-45p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
