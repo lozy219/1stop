@@ -15,6 +15,10 @@ class Store: NSObject {
     var allStops: Dictionary<String, Stop> = [:]
     var allBuses: Dictionary<String, Bus> = [:]
     
+    var currentBus: Bus?
+    var currentStops: [String: Stop]?
+    var currentStop: Stop?
+    
     class var sharedInstance : Store {
         return sharedStore
     }
@@ -62,8 +66,29 @@ class Store: NSObject {
                         let bName = service["name"] as! String
                         let bType = types[service["type"]!!.integerValue] as! String
                         let bDirection = service["routes"]!!.stringValue
+                        var stops: [Stop] = []
                         
-                        self.addBus(bNumber, name: bName, direction: bDirection, provider: bOperator, type: bType)
+                        // load all stops for this bus
+                        if let _path = NSBundle.mainBundle().pathForResource(bNumber, ofType: "json") {
+                            do {
+                                let _data = try NSData(contentsOfURL: NSURL(fileURLWithPath: _path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                                
+                                if let _JSONObject = try NSJSONSerialization.JSONObjectWithData(_data, options: .AllowFragments) as? Dictionary<String, AnyObject> {
+                                    
+                                    for (var j = 0; j < _JSONObject["1"]!["stops"]!!.count; j++) {
+                                        let stop = _JSONObject["1"]!["stops"]!![j]
+                                        
+                                        stops.append(self.getStop(stop as! String)!)
+                                    }
+                                }
+                            } catch let error as NSError {
+                                print(error.localizedDescription)
+                            }
+                        } else {
+                            print("Invalid bus stop filename/path.")
+                        }
+                        
+                        self.addBus(bNumber, name: bName, direction: bDirection, provider: bOperator, type: bType, stops: stops)
                     }
                 }
             } catch let error as NSError {
@@ -75,24 +100,44 @@ class Store: NSObject {
     }
     
     func addStop(number: String, name: String, lat: CLLocationDegrees, lng: CLLocationDegrees) -> Stop {
-        let s = Stop(number: number, name: name, latitude: lat, longitude: lng)
-        self.allStops[number] = s
+        let stop = Stop(number: number, name: name, latitude: lat, longitude: lng)
+        self.allStops[number] = stop
         
-        return s
+        return stop
     }
-    
-    func addBus(number: String, name: String, direction: String, provider: String?, type: String) -> Bus {
-        let b = Bus(number: number, name: name, direction: direction, provider: provider, type: type)
-        self.allBuses[number] = b
+
+    func addBus(number: String, name: String, direction: String, provider: String?, type: String, stops: [Stop]) -> Bus {
+        let bus = Bus(number: number, name: name, direction: direction, provider: provider, type: type, stops: stops)
+        self.allBuses[number] = bus
         
-        return b
+        return bus
     }
     
     func getStop(number: String) -> Stop? {
-        return allStops[number]
+        return self.allStops[number]
     }
     
     func getBus(number: String) -> Bus? {
-        return allBuses[number]
+        return self.allBuses[number]
+    }
+    
+    func chooseBus(number: String) -> Bool {
+        if let bus = self.allBuses[number] {
+            self.currentBus = bus
+//            set current bus stops
+//            self.currentStops =
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func chooseStop(number: String) -> Bool {
+        if let stop = self.currentStops![number] {
+            self.currentStop = stop
+            return true
+        } else {
+            return false
+        }
     }
 }

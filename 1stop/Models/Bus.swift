@@ -14,12 +14,14 @@ class Bus: NSObject {
     var direction: String
     var provider: String?
     var type: String
+    var stops: [Stop]
     
-    init(number: String, name: String, direction: String, provider: String?, type: String) {
+    init(number: String, name: String, direction: String, provider: String?, type: String, stops: [Stop]) {
         self.number = number
         self.name = name
         self.direction = direction
         self.provider = provider
         self.type = type
+        self.stops = stops
     }
 }

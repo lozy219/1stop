@@ -35,7 +35,6 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        self.performSegueWithIdentifier("selectDestination", sender: nil)
         let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DestinationViewController")
         self.navigationController?.pushViewController(destinationVC, animated: false)
         return true
