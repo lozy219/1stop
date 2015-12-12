@@ -11,6 +11,7 @@ import UIKit
 class DestinationListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet var listTableView: UITableView!
+    private var previousCheckedStation: NSIndexPath?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,14 @@ class DestinationListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        let cell = self.listTableView.cellForRowAtIndexPath(indexPath) as! DestinationListTableViewCell
+        if self.previousCheckedStation != nil {
+            let prevCell = self.listTableView.cellForRowAtIndexPath(previousCheckedStation!)
+            prevCell?.accessoryType = UITableViewCellAccessoryType.None
+        }
+        cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        self.previousCheckedStation = indexPath
+        Store.sharedInstance.chooseStop(cell.numberLabel.text!)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
