@@ -13,7 +13,14 @@ class DestinationViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.title = "Select your destination"
+        self.navigationItem.title = "1 STOP"
+        let listTab = self.tabBar.items![0] as UITabBarItem
+        let mapTab = self.tabBar.items![1] as UITabBarItem
+        
+        listTab.title = "List"
+        listTab.image = UIImage(named: "icon_list")
+        mapTab.title = "Map"
+        mapTab.image = UIImage(named: "icon_map")
     }
     
     override func didReceiveMemoryWarning() {
