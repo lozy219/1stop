@@ -12,7 +12,6 @@ import MapKit
 class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     @IBOutlet private weak var mapView: MKMapView!
     private var selectedRoutePoint: RoutePoint?
-    private let pc: UIPopoverPresentationController = UIPopoverPresentationController()
     private let locationManager: CLLocationManager = CLLocationManager()
     private var routePolyline: MKPolyline?
     private var routePoints: [RoutePoint] = []
