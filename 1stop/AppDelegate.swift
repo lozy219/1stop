@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
 
@@ -40,7 +41,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    func handleRegionEvent(region: CLRegion) {
+        // Show an alert if application is active
+        if UIApplication.sharedApplication().applicationState == .Active {
+            if let viewController = window?.rootViewController {
+                showSimpleAlertWithTitle(nil, message: "Next stop is your destination", viewController: viewController)
+            }
+        } else {
+            // Otherwise present a local notification
+            let notification = UILocalNotification()
+            notification.alertBody = "Next stop is your destination"
+            notification.soundName = "Default";
+            UIApplication.sharedApplication().presentLocalNotificationNow(notification)
+        }
+    }
 
-
+    func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        if region is CLCircularRegion {
+            handleRegionEvent(region)
+        }
+    }
+    
+    func showSimpleAlertWithTitle(title: String!, message: String, viewController: UIViewController) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
+        alert.addAction(action)
+        viewController.presentViewController(alert, animated: true, completion: nil)
+    }
 }
 
