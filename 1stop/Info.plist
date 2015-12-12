@@ -34,5 +34,11 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+    <key>NSLocationUsageDescription</key>
+    <string>Please provide your location</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Please provide your location</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Please provide your location</string>
 </dict>
 </plist>

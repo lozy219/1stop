@@ -61,8 +61,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CA2-8j-i0b">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CA2-8j-i0b">
+                                <rect key="frame" x="0.0" y="20" width="600" height="531"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,6 +74,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="FaL-wE-kj9" userLabel="Map"/>
+                    <connections>
+                        <outlet property="mapView" destination="CA2-8j-i0b" id="mcp-Ck-94E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGr-uI-bYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

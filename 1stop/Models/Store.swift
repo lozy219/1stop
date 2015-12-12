@@ -16,7 +16,6 @@ class Store: NSObject {
     var allBuses: Dictionary<String, Bus> = [:]
     
     var currentBus: Bus?
-    var currentStops: [String: Stop]?
     var currentStop: Stop?
     
     class var sharedInstance : Store {
@@ -124,8 +123,6 @@ class Store: NSObject {
     func chooseBus(number: String) -> Bool {
         if let bus = self.allBuses[number] {
             self.currentBus = bus
-//            set current bus stops
-//            self.currentStops =
             return true
         } else {
             return false
@@ -133,7 +130,7 @@ class Store: NSObject {
     }
     
     func chooseStop(number: String) -> Bool {
-        if let stop = self.currentStops![number] {
+        if let stop = self.allStops[number] {
             self.currentStop = stop
             return true
         } else {

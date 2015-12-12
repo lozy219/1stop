@@ -21,6 +21,15 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
         // Do any additional setup after loading the view, typically from a nib.
         self.zoomIntoSingapore()
         mapView.showsUserLocation = true
+        
+        self.locationManager.requestAlwaysAuthorization()
+        
+        let stops = Store.sharedInstance.currentBus!.stops
+        var points:[RoutePoint] = []
+        for stop in stops {
+            points.append(RoutePoint(c: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), title: stop.name, identifier: stop.number))
+        }
+        self.setRoutePoints(points)
     }
     
     override func didReceiveMemoryWarning() {
