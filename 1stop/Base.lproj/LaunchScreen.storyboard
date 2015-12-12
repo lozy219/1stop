@@ -16,7 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="vSV-V3-Kfn">
+                                <rect key="frame" x="215" y="120" width="170" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="170" id="cGh-Uh-SXo"/>
+                                    <constraint firstAttribute="height" constant="170" id="cHn-nq-77g"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24c-6t-rA6">
+                                <rect key="frame" x="242" y="385" width="116" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="28"/>
+                                <color key="textColor" red="0.47843137254901963" green="0.83137254901960789" blue="0.82352941176470584" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vSV-V3-Kfn" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="100" id="J8M-yX-89E"/>
+                            <constraint firstItem="vSV-V3-Kfn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="TAP-3Z-BkZ"/>
+                            <constraint firstItem="24c-6t-rA6" firstAttribute="top" secondItem="vSV-V3-Kfn" secondAttribute="bottom" constant="95" id="acm-co-AXP"/>
+                            <constraint firstItem="24c-6t-rA6" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="kUw-TT-A4E"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +45,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iTunesArtwork" width="1024" height="1024"/>
+    </resources>
 </document>
