@@ -9,5 +9,15 @@
 import UIKit
 
 class Bus: NSObject {
-
+    var number: String
+    var direction: String
+    var provider: String
+    var type: String
+    
+    init(number: String, direction: String, provider: String, type: String) {
+        self.number = number
+        self.direction = direction
+        self.provider = provider
+        self.type = type
+    }
 }

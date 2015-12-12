@@ -7,7 +7,18 @@
 //
 
 import UIKit
+import MapKit
 
 class Stop: NSObject {
-
+    var number: String
+    var name: String
+    var latitude: CLLocationDegrees
+    var longitude: CLLocationDegrees
+    
+    init(number: String, name: String, latitude: CLLocationDegrees, longitude: CLLocationDegrees) {
+        self.number = number
+        self.name = name
+        self.latitude = latitude
+        self.longitude = longitude
+    }
 }
