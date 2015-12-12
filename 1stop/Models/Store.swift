@@ -136,6 +136,7 @@ class Store: NSObject {
     func chooseBus(number: String) -> Bool {
         if let bus = self.allBuses[number] {
             self.currentBus = bus
+            self.currentStop = nil
             return true
         } else {
             return false
