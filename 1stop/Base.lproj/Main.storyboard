@@ -22,9 +22,6 @@
                                 <rect key="frame" x="150" y="164" width="300" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <segue destination="QXp-0S-M5h" kind="show" identifier="selectDestination" action="showDetailViewController:sender:" id="oaZ-iS-cY4"/>
-                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -71,27 +68,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGr-uI-bYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="1350"/>
+            <point key="canvasLocation" x="973" y="1352"/>
         </scene>
         <!--List-->
         <scene sceneID="0Yj-nJ-Eel">
             <objects>
                 <viewController id="ewA-vK-NaD" userLabel="List" customClass="DestinationListViewController" customModule="_stop" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="x9C-nu-sJp">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fze-1Y-9qq"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gdf-b1-wdF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CeM-PY-GrT">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-5E-1Ng">
+                                <rect key="frame" x="0.0" y="-64" width="600" height="615"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </tableView>
+                        <constraints>
+                            <constraint firstItem="Gdf-b1-wdF" firstAttribute="top" secondItem="qSM-5E-1Ng" secondAttribute="bottom" id="AOh-mc-cQq"/>
+                            <constraint firstAttribute="trailing" secondItem="qSM-5E-1Ng" secondAttribute="trailing" id="DfH-za-9J3"/>
+                            <constraint firstItem="qSM-5E-1Ng" firstAttribute="leading" secondItem="CeM-PY-GrT" secondAttribute="leading" id="aqn-Bp-4JH"/>
+                            <constraint firstItem="qSM-5E-1Ng" firstAttribute="top" secondItem="fze-1Y-9qq" secondAttribute="bottom" constant="-84" id="dba-zX-r5C"/>
+                        </constraints>
+                    </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Ln6-RX-hwc" userLabel="List"/>
+                    <navigationItem key="navigationItem" title="Select your destination" id="GZ0-51-o8k"/>
+                    <connections>
+                        <outlet property="listTableView" destination="qSM-5E-1Ng" id="c5S-PC-JWc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKK-WA-45p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939" y="690"/>
+            <point key="canvasLocation" x="973" y="704"/>
         </scene>
         <!--Destination View Controller-->
         <scene sceneID="kuO-Du-8vw">
             <objects>
-                <tabBarController id="QXp-0S-M5h" customClass="DestinationViewController" customModule="_stop" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="DestinationViewController" id="QXp-0S-M5h" customClass="DestinationViewController" customModule="_stop" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="mXB-Mz-Gig">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

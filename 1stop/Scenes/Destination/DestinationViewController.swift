@@ -13,6 +13,7 @@ class DestinationViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        self.navigationItem.title = "Select your destination"
     }
     
     override func didReceiveMemoryWarning() {
