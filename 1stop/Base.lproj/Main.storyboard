@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qSM-5E-1Ng">
-                                <rect key="frame" x="0.0" y="-64" width="600" height="615"/>
+                                <rect key="frame" x="0.0" y="-44" width="600" height="595"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -100,7 +100,7 @@
                             <constraint firstItem="Gdf-b1-wdF" firstAttribute="top" secondItem="qSM-5E-1Ng" secondAttribute="bottom" id="AOh-mc-cQq"/>
                             <constraint firstAttribute="trailing" secondItem="qSM-5E-1Ng" secondAttribute="trailing" id="DfH-za-9J3"/>
                             <constraint firstItem="qSM-5E-1Ng" firstAttribute="leading" secondItem="CeM-PY-GrT" secondAttribute="leading" id="aqn-Bp-4JH"/>
-                            <constraint firstItem="qSM-5E-1Ng" firstAttribute="top" secondItem="fze-1Y-9qq" secondAttribute="bottom" constant="-84" id="dba-zX-r5C"/>
+                            <constraint firstItem="qSM-5E-1Ng" firstAttribute="top" secondItem="fze-1Y-9qq" secondAttribute="bottom" constant="-64" id="dba-zX-r5C"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 1" id="Ln6-RX-hwc" userLabel="List"/>
