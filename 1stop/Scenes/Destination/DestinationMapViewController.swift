@@ -32,6 +32,15 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
         self.setRoutePoints(points)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        if let currentStop = Store.sharedInstance.currentStop {
+            let r = RoutePoint(c: CLLocationCoordinate2DMake(currentStop.latitude, currentStop.longitude), title: currentStop.name, identifier: currentStop.number)
+            self.setSelectedRoutePoint(r)
+        } else {
+            self.removeSelectedRoutePoint()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -105,7 +114,7 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         let polylineRenderer = MKPolylineRenderer(overlay: overlay)
         polylineRenderer.strokeColor = UIColor.redColor()
-        polylineRenderer.lineWidth = 8.0
+        polylineRenderer.lineWidth = 4.0
         return polylineRenderer
     }
     
@@ -156,6 +165,22 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
         mapView.addAnnotation(selectedRoutePoint!)
         
         mapView.selectAnnotation(r, animated: true)
+    }
+    
+    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
+        view.image = UIImage(named: "blue-pin-dot.png")
+        var frame = view.frame
+        frame.size.height *= 2
+        frame.size.width *= 2
+        view.frame = frame
+    }
+    
+    func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
+        view.image = UIImage(named: "red-pin-dot.png")
+        var frame = view.frame
+        frame.size.height /= 2
+        frame.size.width /= 2
+        view.frame = frame
     }
 }
 
