@@ -6,7 +6,7 @@
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Search View Controller-->
+        <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="SearchViewController" sceneMemberID="viewController">
@@ -40,7 +40,7 @@
                             <constraint firstItem="lGJ-9X-Ttm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="hMV-xv-ucz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="QBv-2L-p67"/>
+                    <navigationItem key="navigationItem" title="Search" id="0Z4-8P-NqT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
