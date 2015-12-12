@@ -185,10 +185,6 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
         view.image = UIImage(named: "red-pin-dot.png")
-        var frame = view.frame
-        frame.size.height /= 2
-        frame.size.width /= 2
-        view.frame = frame
     }
 }
 
