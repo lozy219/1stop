@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B6E83A51C1C6BBF00300495 /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E83A41C1C6BBF00300495 /* RoutePoint.swift */; };
 		626FB2431C1C3BE900885A30 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FB2421C1C3BE900885A30 /* SearchViewController.swift */; };
 		626FB2451C1C3C0800885A30 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FB2441C1C3C0800885A30 /* SettingsViewController.swift */; };
 		626FB2491C1C3C1300885A30 /* DestinationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FB2461C1C3C1300885A30 /* DestinationListViewController.swift */; };
@@ -406,6 +407,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B6E83A41C1C6BBF00300495 /* RoutePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutePoint.swift; path = Models/RoutePoint.swift; sourceTree = "<group>"; };
 		626FB2421C1C3BE900885A30 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Scenes/Search/SearchViewController.swift; sourceTree = "<group>"; };
 		626FB2441C1C3C0800885A30 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Scenes/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		626FB2461C1C3C1300885A30 /* DestinationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DestinationListViewController.swift; path = Scenes/Destination/DestinationListViewController.swift; sourceTree = "<group>"; };
@@ -1248,6 +1250,7 @@
 				626FB5271C1C3C7300885A30 /* Bus.swift */,
 				626FB5281C1C3C7300885A30 /* Stop.swift */,
 				626FB5291C1C3C7300885A30 /* Store.swift */,
+				3B6E83A41C1C6BBF00300495 /* RoutePoint.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1812,6 +1815,7 @@
 				626FB52C1C1C3C7300885A30 /* Store.swift in Sources */,
 				626FB52B1C1C3C7300885A30 /* Stop.swift in Sources */,
 				62DA25E61C1C219700938FEC /* AppDelegate.swift in Sources */,
+				3B6E83A51C1C6BBF00300495 /* RoutePoint.swift in Sources */,
 				626FB2451C1C3C0800885A30 /* SettingsViewController.swift in Sources */,
 				626FB2491C1C3C1300885A30 /* DestinationListViewController.swift in Sources */,
 				626FB24A1C1C3C1300885A30 /* DestinationMapViewController.swift in Sources */,
