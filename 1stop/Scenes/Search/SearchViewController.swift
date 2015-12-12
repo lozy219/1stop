@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
+class SearchViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var textField: UITextField!
     
@@ -25,6 +25,8 @@ class SearchViewController: UIViewController {
         border.borderWidth = width
         self.textField.layer.addSublayer(border)
         self.textField.layer.masksToBounds = true
+        
+        self.textField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -32,5 +34,8 @@ class SearchViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.performSegueWithIdentifier("selectDestination", sender: nil)
+        return true
+    }
 }
