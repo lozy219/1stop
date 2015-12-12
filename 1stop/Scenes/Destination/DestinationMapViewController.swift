@@ -38,7 +38,7 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
     }
     
     
-    func refresh(sender: AnyObject) {
+    func refresh() {
         // Remove polylines
         mapView.removeOverlays(mapView.overlays)
         
@@ -79,6 +79,14 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
                 mapView.removeAnnotation(annotation)
             }
         }
+        
+        var coordinates = [CLLocationCoordinate2D]()
+        
+        for r in routePoints {
+            coordinates.append(r.coordinate)
+        }
+        let routePolyline = MKPolyline(coordinates: &coordinates, count: coordinates.count)
+        self.setRoutePolylines(routePolyline)
         
         // Show new annotation pins
         var zoomRect = MKMapRectNull
