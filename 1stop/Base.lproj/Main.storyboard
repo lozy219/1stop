@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--Search View Controller-->
@@ -17,18 +18,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1F-nz-AiM">
-                                <rect key="frame" x="276" y="285" width="48" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-9X-Ttm">
+                                <rect key="frame" x="150" y="164" width="300" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udH-vT-NkY">
+                                <rect key="frame" x="276" y="234" width="48" height="30"/>
                                 <state key="normal" title="Search"/>
                                 <connections>
-                                    <segue destination="QXp-0S-M5h" kind="show" id="qmy-e3-1Bj"/>
+                                    <segue destination="QXp-0S-M5h" kind="show" id="qXd-Wt-0PI"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="I1F-nz-AiM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LnS-0g-DVg"/>
-                            <constraint firstItem="I1F-nz-AiM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="mSz-A6-6oG"/>
+                            <constraint firstItem="lGJ-9X-Ttm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="Fdg-I9-FhJ"/>
+                            <constraint firstItem="udH-vT-NkY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GBp-Ea-YDm"/>
+                            <constraint firstItem="udH-vT-NkY" firstAttribute="top" secondItem="lGJ-9X-Ttm" secondAttribute="bottom" constant="40" id="HAJ-0t-Qup"/>
+                            <constraint firstItem="lGJ-9X-Ttm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mdt-Sa-66R"/>
+                            <constraint firstItem="lGJ-9X-Ttm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="hMV-xv-ucz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QBv-2L-p67"/>
