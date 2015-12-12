@@ -37,7 +37,7 @@ class DestinationListViewController: UIViewController, UITableViewDelegate, UITa
         self.previousCheckedStation = indexPath
         Store.sharedInstance.chooseStop(cell.numberLabel.text!)
         
-        var tababarController = self.parentViewController as? UITabBarController
+        let tababarController = self.parentViewController as? UITabBarController
         tababarController!.selectedIndex = 1
     }
     
