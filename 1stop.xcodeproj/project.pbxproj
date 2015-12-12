@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		62DA25E61C1C219700938FEC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DA25E51C1C219700938FEC /* AppDelegate.swift */; };
-		62DA25E81C1C219700938FEC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DA25E71C1C219700938FEC /* ViewController.swift */; };
 		62DA25EB1C1C219700938FEC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DA25E91C1C219700938FEC /* Main.storyboard */; };
 		62DA25ED1C1C219700938FEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62DA25EC1C1C219700938FEC /* Assets.xcassets */; };
 		62DA25F01C1C219700938FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DA25EE1C1C219700938FEC /* LaunchScreen.storyboard */; };
@@ -17,6 +16,7 @@
 		62DA26161C1C246600938FEC /* Bus Data in Resources */ = {isa = PBXBuildFile; fileRef = 62DA26131C1C246600938FEC /* Bus Data */; };
 		62DA26171C1C246600938FEC /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 62DA26141C1C246600938FEC /* Models */; };
 		62DA26181C1C246600938FEC /* Scenes in Resources */ = {isa = PBXBuildFile; fileRef = 62DA26151C1C246600938FEC /* Scenes */; };
+		62DA26261C1C2C4400938FEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DA26251C1C2C4400938FEC /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 /* Begin PBXFileReference section */
 		62DA25E21C1C219700938FEC /* 1stop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1stop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DA25E51C1C219700938FEC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		62DA25E71C1C219700938FEC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62DA25EA1C1C219700938FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62DA25EC1C1C219700938FEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62DA25EF1C1C219700938FEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		62DA26131C1C246600938FEC /* Bus Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bus Data"; sourceTree = "<group>"; };
 		62DA26141C1C246600938FEC /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
 		62DA26151C1C246600938FEC /* Scenes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scenes; sourceTree = "<group>"; };
+		62DA26251C1C2C4400938FEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DA26261C1C2C4400938FEC /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +84,7 @@
 		62DA25D91C1C219700938FEC = {
 			isa = PBXGroup;
 			children = (
+				62DA26251C1C2C4400938FEC /* MapKit.framework */,
 				62DA25E41C1C219700938FEC /* 1stop */,
 				62DA25F91C1C219700938FEC /* 1stopTests */,
 				62DA26041C1C219700938FEC /* 1stopUITests */,
@@ -107,7 +109,6 @@
 				62DA26141C1C246600938FEC /* Models */,
 				62DA26151C1C246600938FEC /* Scenes */,
 				62DA25E51C1C219700938FEC /* AppDelegate.swift */,
-				62DA25E71C1C219700938FEC /* ViewController.swift */,
 				62DA25E91C1C219700938FEC /* Main.storyboard */,
 				62DA25EC1C1C219700938FEC /* Assets.xcassets */,
 				62DA25EE1C1C219700938FEC /* LaunchScreen.storyboard */,
@@ -202,6 +203,11 @@
 				TargetAttributes = {
 					62DA25E11C1C219700938FEC = {
 						CreatedOnToolsVersion = 7.2;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					62DA25F51C1C219700938FEC = {
 						CreatedOnToolsVersion = 7.2;
@@ -268,7 +274,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62DA25E81C1C219700938FEC /* ViewController.swift in Sources */,
 				62DA25E61C1C219700938FEC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
