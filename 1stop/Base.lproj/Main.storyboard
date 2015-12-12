@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gn9-0T-uA0">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -19,16 +18,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="27" translatesAutoresizingMaskIntoConstraints="NO" id="lGJ-9X-Ttm">
-                                <rect key="frame" x="150" y="164" width="300" height="33"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <rect key="frame" x="163.5" y="233.5" width="273" height="104"/>
+                                <color key="textColor" red="1" green="0.71719462756250307" blue="0.063086616568020615" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="87"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What's your bus no.?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIJ-ET-mpi">
+                                <rect key="frame" x="157" y="144" width="285" height="39.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lGJ-9X-Ttm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2" id="Fdg-I9-FhJ"/>
+                            <constraint firstItem="lGJ-9X-Ttm" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="1:2.2" id="Fdg-I9-FhJ"/>
+                            <constraint firstItem="xIJ-ET-mpi" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="Fju-oM-ziz"/>
                             <constraint firstItem="lGJ-9X-Ttm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Mdt-Sa-66R"/>
-                            <constraint firstItem="lGJ-9X-Ttm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="hMV-xv-ucz"/>
+                            <constraint firstItem="xIJ-ET-mpi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Sq0-uU-wV2"/>
+                            <constraint firstItem="lGJ-9X-Ttm" firstAttribute="top" secondItem="xIJ-ET-mpi" secondAttribute="bottom" constant="50" id="tUS-s1-IkL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="1 STOP" id="0Z4-8P-NqT"/>
@@ -52,7 +60,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CA2-8j-i0b">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CA2-8j-i0b">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </mapView>
                         </subviews>
