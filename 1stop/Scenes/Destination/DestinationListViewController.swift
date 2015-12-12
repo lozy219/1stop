@@ -15,8 +15,6 @@ class DestinationListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let inset = UIEdgeInsetsMake(20, 0, 0, 0);
-        self.listTableView.contentInset = inset;
     }
     
     override func didReceiveMemoryWarning() {

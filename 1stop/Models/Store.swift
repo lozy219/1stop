@@ -15,6 +15,10 @@ class Store: NSObject {
     var allStops: Dictionary<String, Stop> = [:]
     var allBuses: Dictionary<String, Bus> = [:]
     
+    var currentBus: Bus?
+    var currentStops: [String: Stop]?
+    var currentStop: Stop?
+    
     class var sharedInstance : Store {
         return sharedStore
     }
@@ -52,18 +56,38 @@ class Store: NSObject {
         return s
     }
     
-    func addBus(number: String, direction: String, provider: String, type: String) -> Bus {
-        let b = Bus(number: number, direction: direction, provider: provider, type: type)
+    func addBus(number: String, direction: String, provider: String, type: String, stops: [String]) -> Bus {
+        let b = Bus(number: number, direction: direction, provider: provider, type: type, stops: stops)
         self.allBuses[number] = b
         
         return b
     }
     
     func getStop(number: String) -> Stop? {
-        return allStops[number]
+        return self.allStops[number]
     }
     
     func getBus(number: String) -> Bus? {
-        return allBuses[number]
+        return self.allBuses[number]
+    }
+    
+    func chooseBus(number: String) -> Bool {
+        if let bus = self.allBuses[number] {
+            self.currentBus = bus
+//            set current bus stops
+//            self.currentStops =
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func chooseStop(number: String) -> Bool {
+        if let stop = self.currentStops![number] {
+            self.currentStop = stop
+            return true
+        } else {
+            return false
+        }
     }
 }
