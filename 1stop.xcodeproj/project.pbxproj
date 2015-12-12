@@ -389,6 +389,7 @@
 		62DA26261C1C2C4400938FEC /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62DA26251C1C2C4400938FEC /* MapKit.framework */; };
 		62EFF7931C1C7F4300AEEA64 /* DestinationListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62EFF7911C1C7F4300AEEA64 /* DestinationListTableViewCell.swift */; };
 		62EFF7941C1C7F4300AEEA64 /* DestinationListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62EFF7921C1C7F4300AEEA64 /* DestinationListTableViewCell.xib */; };
+		62EFF7961C1C9C0300AEEA64 /* krt.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 62EFF7951C1C9C0300AEEA64 /* krt.gpx */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -797,6 +798,7 @@
 		62DA26251C1C2C4400938FEC /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		62EFF7911C1C7F4300AEEA64 /* DestinationListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DestinationListTableViewCell.swift; path = Scenes/Destination/DestinationListTableViewCell.swift; sourceTree = "<group>"; };
 		62EFF7921C1C7F4300AEEA64 /* DestinationListTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DestinationListTableViewCell.xib; path = Scenes/Destination/DestinationListTableViewCell.xib; sourceTree = "<group>"; };
+		62EFF7951C1C9C0300AEEA64 /* krt.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = krt.gpx; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1264,6 +1266,7 @@
 		62DA25D91C1C219700938FEC = {
 			isa = PBXGroup;
 			children = (
+				62EFF7951C1C9C0300AEEA64 /* krt.gpx */,
 				62DA26251C1C2C4400938FEC /* MapKit.framework */,
 				62DA25E41C1C219700938FEC /* 1stop */,
 				62DA25F91C1C219700938FEC /* 1stopTests */,
@@ -1424,6 +1427,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62EFF7961C1C9C0300AEEA64 /* krt.gpx in Resources */,
 				626FB4B11C1C3C5D00885A30 /* 282.json in Resources */,
 				626FB4561C1C3C5D00885A30 /* 145.json in Resources */,
 				626FB4B81C1C3C5D00885A30 /* 301.json in Resources */,
