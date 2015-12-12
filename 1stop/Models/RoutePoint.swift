@@ -9,9 +9,9 @@
 import Foundation
 import MapKit
 
-class RoutePoint: NSObject {
+class RoutePoint: NSObject, MKAnnotation {
     let coordinate: CLLocationCoordinate2D
-    let title: String
+    let title: String?
     let identifier: String
     
     init(c: CLLocationCoordinate2D, title: String, identifier: String) {
