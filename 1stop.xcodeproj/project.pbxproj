@@ -14,6 +14,9 @@
 		62DA25F01C1C219700938FEC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62DA25EE1C1C219700938FEC /* LaunchScreen.storyboard */; };
 		62DA25FB1C1C219700938FEC /* _stopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DA25FA1C1C219700938FEC /* _stopTests.swift */; };
 		62DA26061C1C219700938FEC /* _stopUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62DA26051C1C219700938FEC /* _stopUITests.swift */; };
+		62DA26161C1C246600938FEC /* Bus Data in Resources */ = {isa = PBXBuildFile; fileRef = 62DA26131C1C246600938FEC /* Bus Data */; };
+		62DA26171C1C246600938FEC /* Models in Resources */ = {isa = PBXBuildFile; fileRef = 62DA26141C1C246600938FEC /* Models */; };
+		62DA26181C1C246600938FEC /* Scenes in Resources */ = {isa = PBXBuildFile; fileRef = 62DA26151C1C246600938FEC /* Scenes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		62DA26011C1C219700938FEC /* 1stopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1stopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62DA26051C1C219700938FEC /* _stopUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _stopUITests.swift; sourceTree = "<group>"; };
 		62DA26071C1C219700938FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62DA26131C1C246600938FEC /* Bus Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bus Data"; sourceTree = "<group>"; };
+		62DA26141C1C246600938FEC /* Models */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Models; sourceTree = "<group>"; };
+		62DA26151C1C246600938FEC /* Scenes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scenes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,9 @@
 		62DA25E41C1C219700938FEC /* 1stop */ = {
 			isa = PBXGroup;
 			children = (
+				62DA26131C1C246600938FEC /* Bus Data */,
+				62DA26141C1C246600938FEC /* Models */,
+				62DA26151C1C246600938FEC /* Scenes */,
 				62DA25E51C1C219700938FEC /* AppDelegate.swift */,
 				62DA25E71C1C219700938FEC /* ViewController.swift */,
 				62DA25E91C1C219700938FEC /* Main.storyboard */,
@@ -229,7 +238,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62DA26171C1C246600938FEC /* Models in Resources */,
+				62DA26161C1C246600938FEC /* Bus Data in Resources */,
 				62DA25F01C1C219700938FEC /* LaunchScreen.storyboard in Resources */,
+				62DA26181C1C246600938FEC /* Scenes in Resources */,
 				62DA25ED1C1C219700938FEC /* Assets.xcassets in Resources */,
 				62DA25EB1C1C219700938FEC /* Main.storyboard in Resources */,
 			);
@@ -399,7 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = 1stop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.golearn.-stop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.golearn.1stop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -410,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = 1stop/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.golearn.-stop";
+				PRODUCT_BUNDLE_IDENTIFIER = com.golearn.1stop;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
