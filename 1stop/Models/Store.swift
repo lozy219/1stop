@@ -11,7 +11,6 @@ import MapKit
 import CoreLocation
 
 private let sharedStore = Store()
-private let locationManager = CLLocationManager()
 
 class Store: NSObject {
     var allStops: Dictionary<String, Stop> = [:]
@@ -155,18 +154,18 @@ class Store: NSObject {
     
     func chooseStop(number: String) -> Bool {
         if let stop = self.allStops[number] {
-            if self.currentStop != nil {
-                let prevRegion = CLCircularRegion(center: CLLocationCoordinate2D(latitude: self.currentStop!.latitude, longitude: self.currentStop!.longitude), radius: 100, identifier: self.currentStop!.number)
-                prevRegion.notifyOnEntry = true
-                prevRegion.notifyOnExit = false
-                locationManager.stopMonitoringForRegion(prevRegion)
+            // Clear previous monitored regions
+            for prevRegion in LocationManager.sharedInstance.monitoredRegions {
+                LocationManager.sharedInstance.stopMonitoringForRegion(prevRegion)
+                print("stop old location monitoring")
             }
             
             self.currentStop = stop
-            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), radius: 100, identifier: stop.number)
+            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), radius: 100000000000, identifier: stop.number)
             region.notifyOnEntry = true
             region.notifyOnExit = false
-            locationManager.startMonitoringForRegion(region)
+            LocationManager.sharedInstance.startMonitoringForRegion(region)
+            print("start new location monitoring")
             return true
         } else {
             return false
