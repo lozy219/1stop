@@ -172,16 +172,11 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
         selectedRoutePoint = r
         mapView.addAnnotation(selectedRoutePoint!)
         
-        mapView.selectAnnotation(r, animated: true)
+//        mapView.selectAnnotation(r, animated: true)
     }
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
         view.image = UIImage(named: "blue-pin-dot.png")
-        var frame = view.frame
-        frame.size.height *= 2
-        frame.size.width *= 2
-        frame.origin = CGPointMake(frame.origin.x - frame.size.width / 3.2, frame.origin.y - frame.size.height / 2)
-        view.frame = frame
     }
     
     func mapView(mapView: MKMapView, didDeselectAnnotationView view: MKAnnotationView) {
