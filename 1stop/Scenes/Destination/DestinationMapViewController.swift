@@ -27,14 +27,14 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
         
         let stops = Store.sharedInstance.currentBus!.stops
         var points:[RoutePoint] = []
-        for stop in stops {
+        for stop in stops! {
             points.append(RoutePoint(c: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), title: stop.name, identifier: stop.number))
         }
         stopPoints = points
         
         let route = Store.sharedInstance.currentBus!.route
         var routePoints:[RoutePoint] = []
-        for stop in route {
+        for stop in route! {
             routePoints.append(RoutePoint(c: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), title: "", identifier: ""))
         }
         setRoutePoints(routePoints)

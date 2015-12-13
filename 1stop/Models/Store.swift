@@ -67,41 +67,48 @@ class Store: NSObject {
                         let bName = service["name"] as! String
                         let bType = types[service["type"]!!.integerValue] as! String
                         let bDirection = service["routes"]!!.stringValue
-                        var stops: [Stop] = []
-                        var route: [CLLocationCoordinate2D] = []
                         
-                        // load all stops for this bus
-                        if let _path = NSBundle.mainBundle().pathForResource(bNumber, ofType: "json") {
-                            do {
-                                let _data = try NSData(contentsOfURL: NSURL(fileURLWithPath: _path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
-                                
-                                if let _JSONObject = try NSJSONSerialization.JSONObjectWithData(_data, options: .AllowFragments) as? Dictionary<String, AnyObject> {
-                                    for (var k = 0; k < _JSONObject["1"]!["route"]!!.count; k++) {
-                                        let point:String = String(_JSONObject["1"]!["route"]!![k])
-                                        let pointArr = point.characters.split{$0 == ","}.map(String.init)
-                                        let lat = Double(pointArr[0])
-                                        let lon = Double(pointArr[1])
-                                        
-                                        let coord = CLLocationCoordinate2D(latitude: lat!, longitude: lon!)
-                                        
-                                        route.append(coord)
-                                    }
-                                    
-                                    for (var j = 0; j < _JSONObject["1"]!["stops"]!!.count; j++) {
-                                        let stop = _JSONObject["1"]!["stops"]!![j]
-                                        
-                                        stops.append(self.getStop(stop as! String)!)
-                                    }
-                                }
-                            } catch let error as NSError {
-                                print(error.localizedDescription)
-                            }
-                        } else {
-                            print("Invalid bus stop filename/path.")
-                        }
-                        
-                        self.addBus(bNumber, name: bName, direction: bDirection, provider: bOperator, type: bType, stops: stops, route: route)
+                        self.addBus(bNumber, name: bName, direction: bDirection, provider: bOperator, type: bType)
                     }
+                }
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } else {
+            print("Invalid bus stop filename/path.")
+        }
+    }
+    
+    func addRoutesAndStops(bNumber: String) {
+        var stops: [Stop] = []
+        var route: [CLLocationCoordinate2D] = []
+        
+        // load all stops for this bus
+        if let _path = NSBundle.mainBundle().pathForResource(bNumber, ofType: "json") {
+            do {
+                let _data = try NSData(contentsOfURL: NSURL(fileURLWithPath: _path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                
+                if let _JSONObject = try NSJSONSerialization.JSONObjectWithData(_data, options: .AllowFragments) as? Dictionary<String, AnyObject> {
+                    for (var k = 0; k < _JSONObject["1"]!["route"]!!.count; k++) {
+                        let point:String = String(_JSONObject["1"]!["route"]!![k])
+                        let pointArr = point.characters.split{$0 == ","}.map(String.init)
+                        let lat = Double(pointArr[0])
+                        let lon = Double(pointArr[1])
+                        
+                        let coord = CLLocationCoordinate2D(latitude: lat!, longitude: lon!)
+                        
+                        route.append(coord)
+                    }
+                    
+                    for (var j = 0; j < _JSONObject["1"]!["stops"]!!.count; j++) {
+                        let stop = _JSONObject["1"]!["stops"]!![j]
+                        
+                        stops.append(self.getStop(stop as! String)!)
+                    }
+                    
+                    let bus = self.getBus(bNumber)
+                    bus?.stops = stops
+                    bus?.route = route
                 }
             } catch let error as NSError {
                 print(error.localizedDescription)
@@ -118,8 +125,8 @@ class Store: NSObject {
         return stop
     }
 
-    func addBus(number: String, name: String, direction: String, provider: String?, type: String, stops: [Stop], route: [CLLocationCoordinate2D]) -> Bus {
-        let bus = Bus(number: number, name: name, direction: direction, provider: provider, type: type, stops: stops, route: route)
+    func addBus(number: String, name: String, direction: String, provider: String?, type: String) -> Bus {
+        let bus = Bus(number: number, name: name, direction: direction, provider: provider, type: type, stops: nil, route: nil)
         self.allBuses[number] = bus
         
         return bus
@@ -137,6 +144,9 @@ class Store: NSObject {
         if let bus = self.allBuses[number] {
             self.currentBus = bus
             self.currentStop = nil
+            
+            addRoutesAndStops(number)
+            
             return true
         } else {
             return false

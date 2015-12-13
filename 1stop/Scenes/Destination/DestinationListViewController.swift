@@ -42,14 +42,14 @@ class DestinationListViewController: UIViewController, UITableViewDelegate, UITa
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Store.sharedInstance.currentBus!.stops.count
+        return Store.sharedInstance.currentBus!.stops!.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DestinationListTableViewCell", forIndexPath: indexPath) as! DestinationListTableViewCell
         let stops = Store.sharedInstance.currentBus!.stops
-        cell.nameLabel.text = stops[indexPath.row].name
-        cell.numberLabel.text = stops[indexPath.row].number
+        cell.nameLabel.text = stops![indexPath.row].name
+        cell.numberLabel.text = stops![indexPath.row].number
         return cell
     }
 }

@@ -15,10 +15,10 @@ class Bus: NSObject {
     var direction: String
     var provider: String?
     var type: String
-    var stops: [Stop]
-    var route: [CLLocationCoordinate2D]
+    var stops: [Stop]?
+    var route: [CLLocationCoordinate2D]?
     
-    init(number: String, name: String, direction: String, provider: String?, type: String, stops: [Stop], route: [CLLocationCoordinate2D]) {
+    init(number: String, name: String, direction: String, provider: String?, type: String, stops: [Stop]?, route: [CLLocationCoordinate2D]?) {
         self.number = number
         self.name = name
         self.direction = direction
