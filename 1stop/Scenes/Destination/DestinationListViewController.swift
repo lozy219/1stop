@@ -48,6 +48,13 @@ class DestinationListViewController: UIViewController, UITableViewDelegate, UITa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("DestinationListTableViewCell", forIndexPath: indexPath) as! DestinationListTableViewCell
         let stops = Store.sharedInstance.currentBus!.stops
+        
+        if previousCheckedStation?.row == indexPath.row {
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        } else {
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+        
         cell.nameLabel.text = stops![indexPath.row].name
         cell.numberLabel.text = stops![indexPath.row].number
         return cell
