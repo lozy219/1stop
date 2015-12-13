@@ -180,6 +180,7 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocat
         var frame = view.frame
         frame.size.height *= 2
         frame.size.width *= 2
+        frame.origin = CGPointMake(frame.origin.x - frame.size.width / 3.2, frame.origin.y - frame.size.height / 2)
         view.frame = frame
     }
     
