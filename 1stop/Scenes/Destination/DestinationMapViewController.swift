@@ -9,10 +9,10 @@
 import UIKit
 import MapKit
 
-class DestinationMapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class DestinationMapViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet private weak var mapView: MKMapView!
     private var selectedRoutePoint: RoutePoint?
-    private let locationManager: CLLocationManager = CLLocationManager()
+    private let locationManager: CLLocationManager = LocationManager.sharedInstance
     private var routePolyline: MKPolyline?
     private var routePoints: [RoutePoint] = []
     private var stopPoints: [RoutePoint] = []

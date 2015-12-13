@@ -14,10 +14,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     var window: UIWindow?
 
-
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         Store.sharedInstance
+        LocationManager.sharedInstance.delegate = self
         return true
     }
 
@@ -59,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
 
     func locationManager(manager: CLLocationManager, didEnterRegion region: CLRegion) {
+        print("in region")
         if region is CLCircularRegion {
             handleRegionEvent(region)
         }
@@ -69,6 +70,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         let action = UIAlertAction(title: "OK", style: .Cancel, handler: nil)
         alert.addAction(action)
         viewController.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
+        print("changed")
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("changed")
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("did fail with error.")
+    }
+    
+    func locationManager(manager: CLLocationManager, monitoringDidFailForRegion region: CLRegion?, withError error: NSError) {
+        print("fuck, failed")
+        print(error.description)
     }
 }
 
