@@ -37,8 +37,17 @@ class DestinationListViewController: UIViewController, UITableViewDelegate, UITa
         self.previousCheckedStation = indexPath
         Store.sharedInstance.chooseStop(cell.numberLabel.text!)
         
-        let tababarController = self.parentViewController as? UITabBarController
-        tababarController!.selectedIndex = 1
+        let alert = UIAlertController(title: "Set \(cell.nameLabel.text!) as your destination", message: "", preferredStyle: .Alert)
+        
+        let confirm = UIAlertAction(title: "Yes!", style: .Default, handler: {
+            (let action) -> Void in
+            let tababarController = self.parentViewController as? UITabBarController
+            tababarController!.selectedIndex = 1
+        })
+        let cancel = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(confirm)
+        alert.addAction(cancel)
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

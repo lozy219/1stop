@@ -16,8 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        Store.sharedInstance
         LocationManager.sharedInstance.delegate = self
+        
+        let notificationCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        notificationCategory.identifier = "INVITE_CATEGORY"
+        
+        //registerting for the notification.
+        application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes:[ .Sound, .Alert,
+            .Badge], categories: nil))
+            
         return true
     }
 
