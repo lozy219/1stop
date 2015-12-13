@@ -10,7 +10,6 @@
 		3B6E83A51C1C6BBF00300495 /* RoutePoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B6E83A41C1C6BBF00300495 /* RoutePoint.swift */; };
 		3BCF24E51C1D382600AF88CE /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BCF24E41C1D382600AF88CE /* LocationManager.swift */; };
 		626FB2431C1C3BE900885A30 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FB2421C1C3BE900885A30 /* SearchViewController.swift */; };
-		626FB2451C1C3C0800885A30 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FB2441C1C3C0800885A30 /* SettingsViewController.swift */; };
 		626FB2491C1C3C1300885A30 /* DestinationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FB2461C1C3C1300885A30 /* DestinationListViewController.swift */; };
 		626FB24A1C1C3C1300885A30 /* DestinationMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FB2471C1C3C1300885A30 /* DestinationMapViewController.swift */; };
 		626FB24B1C1C3C1300885A30 /* DestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626FB2481C1C3C1300885A30 /* DestinationViewController.swift */; };
@@ -414,7 +413,6 @@
 		3B6E83A41C1C6BBF00300495 /* RoutePoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutePoint.swift; path = Models/RoutePoint.swift; sourceTree = "<group>"; };
 		3BCF24E41C1D382600AF88CE /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		626FB2421C1C3BE900885A30 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = Scenes/Search/SearchViewController.swift; sourceTree = "<group>"; };
-		626FB2441C1C3C0800885A30 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Scenes/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		626FB2461C1C3C1300885A30 /* DestinationListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DestinationListViewController.swift; path = Scenes/Destination/DestinationListViewController.swift; sourceTree = "<group>"; };
 		626FB2471C1C3C1300885A30 /* DestinationMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DestinationMapViewController.swift; path = Scenes/Destination/DestinationMapViewController.swift; sourceTree = "<group>"; };
 		626FB2481C1C3C1300885A30 /* DestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DestinationViewController.swift; path = Scenes/Destination/DestinationViewController.swift; sourceTree = "<group>"; };
@@ -832,19 +830,10 @@
 		626FB23D1C1C3BA600885A30 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				626FB2411C1C3BD500885A30 /* Settings */,
 				626FB2401C1C3BD100885A30 /* Search */,
 				626FB23F1C1C3BB300885A30 /* Destination */,
-				626FB23E1C1C3BAD00885A30 /* Alert */,
 			);
 			name = Scenes;
-			sourceTree = "<group>";
-		};
-		626FB23E1C1C3BAD00885A30 /* Alert */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Alert;
 			sourceTree = "<group>";
 		};
 		626FB23F1C1C3BB300885A30 /* Destination */ = {
@@ -865,14 +854,6 @@
 				626FB2421C1C3BE900885A30 /* SearchViewController.swift */,
 			);
 			name = Search;
-			sourceTree = "<group>";
-		};
-		626FB2411C1C3BD500885A30 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				626FB2441C1C3C0800885A30 /* SettingsViewController.swift */,
-			);
-			name = Settings;
 			sourceTree = "<group>";
 		};
 		626FB24C1C1C3C3C00885A30 /* Bus Data */ = {
@@ -1832,7 +1813,6 @@
 				62DA25E61C1C219700938FEC /* AppDelegate.swift in Sources */,
 				3B6E83A51C1C6BBF00300495 /* RoutePoint.swift in Sources */,
 				3BCF24E51C1D382600AF88CE /* LocationManager.swift in Sources */,
-				626FB2451C1C3C0800885A30 /* SettingsViewController.swift in Sources */,
 				626FB2491C1C3C1300885A30 /* DestinationListViewController.swift in Sources */,
 				626FB24A1C1C3C1300885A30 /* DestinationMapViewController.swift in Sources */,
 			);

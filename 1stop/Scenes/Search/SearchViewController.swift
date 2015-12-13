@@ -39,7 +39,7 @@ class SearchViewController: UIViewController, UITextFieldDelegate {
         Store.sharedInstance.chooseBus(busNumber)
         
         let destinationVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DestinationViewController")
-        self.navigationController?.pushViewController(destinationVC, animated: false)
+        self.navigationController?.pushViewController(destinationVC, animated: true)
         return true
     }
 }
