@@ -172,7 +172,7 @@ class DestinationMapViewController: UIViewController, MKMapViewDelegate {
         selectedRoutePoint = r
         mapView.addAnnotation(selectedRoutePoint!)
         
-//        mapView.selectAnnotation(r, animated: true)
+        mapView.selectAnnotation(r, animated: true)
     }
     
     func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {

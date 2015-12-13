@@ -161,7 +161,7 @@ class Store: NSObject {
             }
             
             self.currentStop = stop
-            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), radius: 100000000000, identifier: stop.number)
+            let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: stop.latitude, longitude: stop.longitude), radius: 700, identifier: stop.number)
             region.notifyOnEntry = true
             region.notifyOnExit = false
             LocationManager.sharedInstance.startMonitoringForRegion(region)
